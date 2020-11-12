@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "form-builder-typed": {
+      "projectType": "library",
+      "root": "projects/form-builder-typed",
+      "sourceRoot": "projects/form-builder-typed/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/form-builder-typed/tsconfig.lib.json",
+            "project": "projects/form-builder-typed/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/form-builder-typed/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/form-builder-typed/src/test.ts",
+            "tsConfig": "projects/form-builder-typed/tsconfig.spec.json",
+            "karmaConfig": "projects/form-builder-typed/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/form-builder-typed/tsconfig.lib.json",
+              "projects/form-builder-typed/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ngx-form-builder-typed"
 }
